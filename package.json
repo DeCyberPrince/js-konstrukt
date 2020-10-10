@@ -1,0 +1,27 @@
+{
+  "name": "js-konstrukt",
+  "version": "1.0.0",
+  "description": "js pure app",
+  "main": "src/index.js",
+  "scripts": {
+    "serve": "parcel ./src/index.html -p 4200 --open",
+    "build": "parcel build ./src/index.html --no-source-maps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeCyberPrince/js-konstrukt.git"
+  },
+  "keywords": [
+    "js",
+    "javascript"
+  ],
+  "author": "DeCyberPrince <decyberprince@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeCyberPrince/js-konstrukt/issues"
+  },
+  "homepage": "https://github.com/DeCyberPrince/js-konstrukt#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
