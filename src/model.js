@@ -1,8 +1,8 @@
 import image from './assets/image.png'
-import { Block } from './classes/blocks'
+import { TitleBlock, TextBlock, ColumnsBlock, ImageBlock } from './classes/blocks'
 
 export const model = [
-  new Block('title', 'Конструктор сайтов на чистом JavaScript', {
+  new TitleBlock( 'Конструктор сайтов на чистом JavaScript', {
     tag: 'h2',
     styles: {
       'text-align': 'center',
@@ -10,18 +10,18 @@ export const model = [
       color: '#fff'
     }
   }),
-  new Block('text', 'Here we go with some text', {
+  new TextBlock( 'Here we go with some text', {
     tag: 'p',
     styles: {}
   }),
-  new Block('columns', [
+  new ColumnsBlock( [
     '111111111',
     '222222222',
     '333333333'
   ], {
     styles: {}
   }),
-  new Block('image', image, {
+  new ImageBlock(image, {
     styles: {
       display: 'flex',
       'justify-content': 'center'
