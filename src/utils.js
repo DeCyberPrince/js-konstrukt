@@ -1,6 +1,6 @@
-export function row(content) {
+export function row(content, styles = '') {
   return `
-  <div class="row">
+  <div class="row" style="${styles}">
       ${content}
   </div>
   `
