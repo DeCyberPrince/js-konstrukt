@@ -23,17 +23,29 @@ export function css(styles = {}) {
 }
 
 export function block(type) {
-    return `
-    <form name="${type}">
-        <h5>${type}</h5>
-        <div class="form-group">
-            <input class="form-control form-control-sm" name="value" placeholder="value">
-        </div>
+    let html = `
+        <form name="${type}" data-class="${convertTypeToClassName(type)}">
+            <h5>${type}</h5>
+            <div class="form-group">
+                <input class="form-control form-control-sm" name="value" placeholder="value">
+            </div>
+            `
+    if (type === 'img') {
+        html += `
+            <div class="form-group">
+                <input class="form-control form-control-sm" name="imageStyles" placeholder="imageStyles">
+            </div>`
+    }
+    html += `
         <div class="form-group">
             <input class="form-control form-control-sm" name="styles" placeholder="styles">
         </div>
         <button type="submit" class="btn btn-primary btn-sm">Add</button>
     </form>
-    <hr/>
-    `
+    <hr/>`
+    return html
+}
+
+function convertTypeToClassName(type = '') {
+    return `${type[0].toUpperCase()}${type.slice(1)}Block`
 }

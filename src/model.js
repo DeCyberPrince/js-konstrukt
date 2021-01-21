@@ -30,7 +30,6 @@ export const model = [
       width: '500px',
       height: 'auto'
     },
-    classes: [''],
     alt: 'Picture'
   })
 ]

@@ -1,5 +1,5 @@
 import { block } from '../utils'
-import { TextBlock, TitleBlock } from './blocks'
+import {ColumnsBlock, ImageBlock, TextBlock, TitleBlock} from './blocks'
 
 export class Sidebar {
     constructor(selector, updateCallback) {
@@ -16,21 +16,39 @@ export class Sidebar {
     get template() {
         return [
             block('title'),
-            block('text')
+            block('text'),
+            block('img'),
+            block('columns'),
         ].join('')
     }
 
     add(event) {
         event.preventDefault()
-        const type = event.target.name
-        const value = event.target.value.value
-        const styles = event.target.styles.value
-        const newBlock = type === 'title'
-            ? new TitleBlock(value, { styles })
-            : new TextBlock(value, { styles })
+        const type = event.target.name,
+            value = event.target.value.value,
+            styles = event.target.styles.value,
+            imageStyles = event.target.imageStyles?.value
 
+        let newBlock
+        switch (type) {
+            case 'title':
+                newBlock = new TitleBlock(value, { styles })
+                break
+            case 'text':
+                newBlock = new TextBlock(value, { styles })
+                break
+            case 'img':
+                newBlock = new ImageBlock(value, { styles, imageStyles })
+                break
+            case 'columns':
+                newBlock = new ColumnsBlock(value.split(','), { styles })
+                break
+            default:
+        }
         this.update(newBlock)
         event.target.value.value = event.target.styles.value = ''
-
+        if (imageStyles) {
+            event.target.imageStyles.value = ''
+        }
     }
 }

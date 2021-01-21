@@ -45,9 +45,9 @@ export class ImageBlock extends Block {
   }
 
   toHTML() {
-    const { classes, styles, imageStyles, alt = '' } = this.options
+    const { styles, imageStyles, alt = '' } = this.options
     return row(
-      `<img class="${classes.join(' ')}" style="${css(imageStyles)}" src="${this.value}" alt="${alt}" />`,
+      `<img style="${css(imageStyles)}" src="${this.value}" alt="${alt}" />`,
       css(styles)
     )
   }
