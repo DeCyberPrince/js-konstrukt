@@ -11,10 +11,10 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"../utils":"FOZT","./blocks":"dDFO"}],"Z1kE":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.App=void 0;var e=require("./site"),r=require("./sidebar");function n(e,r){if(!(e instanceof r))throw new TypeError("Cannot call a class as a function")}function t(e,r){for(var n=0;n<r.length;n++){var t=r[n];t.enumerable=t.enumerable||!1,t.configurable=!0,"value"in t&&(t.writable=!0),Object.defineProperty(e,t.key,t)}}function i(e,r,n){return r&&t(e.prototype,r),n&&t(e,n),e}var o=function(){function t(e){n(this,t),this.model=e}return i(t,[{key:"init",value:function(){var n=this,t=new e.Site("#site");t.render(this.model);new r.Sidebar("#panel",function(e){n.model.push(e),t.render(n.model)})}}]),t}();exports.App=o;
 },{"./site":"V48B","./sidebar":"idI0"}],"CrKI":[function(require,module,exports) {
-module.exports="js-konstrukt/image.61dd97e5.png";
+module.exports="/image.61dd97e5.png";
 },{}],"JDu1":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.model=void 0;var e=s(require("./assets/image.png")),t=require("./classes/blocks");function s(e){return e&&e.__esModule?e:{default:e}}var l=[new t.TitleBlock("Конструктор сайтов на чистом JavaScript",{tag:"h2",styles:{"text-align":"center",background:"gray",color:"#fff"}}),new t.TextBlock("Here we go with some text",{tag:"p",styles:{}}),new t.ColumnsBlock(["111111111","222222222","333333333"],{styles:{}}),new t.ImageBlock(e.default,{styles:{display:"flex","justify-content":"center"},imageStyles:{width:"500px",height:"auto"},alt:"Picture"})];exports.model=l;
 },{"./assets/image.png":"CrKI","./classes/blocks":"dDFO"}],"Focm":[function(require,module,exports) {
 "use strict";require("./styles/main.css");var e=require("./classes/app"),s=require("./model");new e.App(s.model).init();
 },{"./styles/main.css":"jExt","./classes/app":"Z1kE","./model":"JDu1"}]},{},["Focm"], null)
-//# sourceMappingURL=js-konstrukt/src.4f721cbc.js.map
+//# sourceMappingURL=/src.4f721cbc.js.map
